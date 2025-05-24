@@ -1,10 +1,10 @@
-pipeline {
+ipipeline {
     agent any
 
     stages {
         stage('Clone') {
             steps {
-                git branch: 'project-1', url: 'https://github.com/<your-github-username>/proj-mdp-152-155.git'
+                git branch: 'project-1', url: 'https://github.com/theamara/proj-mdp-152-155.git'
             }
         }
 
