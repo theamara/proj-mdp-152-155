@@ -18,8 +18,8 @@ pipeline {
             steps {
                 // Stop and remove existing container if any
                 sh 'docker rm -f my-java-container || true'
-                // Run container in detached mode, map port 8080
-                sh 'docker run -d -p 8080:8080 --name my-java-container my-java-app'
+                // Run container in detached mode, map container port 8080 to host port 9090
+                sh 'docker run -d -p 9090:8080 --name my-java-container my-java-app'
             }
         }
     }
