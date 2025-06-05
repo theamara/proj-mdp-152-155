@@ -1,0 +1,11 @@
+---
+- name: Delete Kubernetes cluster with kops
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Delete cluster
+      shell: |
+        kops delete cluster --name=mycluster.k8s.local --yes
+      environment:
+        KOPS_STATE_STORE: "{{ lookup('env', 'KOPS_STATE_STORE') }}"
+        AWS_REGION: "{{ lookup('env', 'AWS_REGION') }}"
